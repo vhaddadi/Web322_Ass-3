@@ -386,7 +386,7 @@ app.get("/deleteProduct",ensureAdmin,(req,res)=>{
    if(req.query.title){
      db.deleteProductByTitle(req.query.title);
       res.render("ProductDash")
-                  //typically a faster function
+                  
    }
    else{
      console.log("No Query");
