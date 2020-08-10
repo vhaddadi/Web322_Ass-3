@@ -384,13 +384,10 @@ app.post("/editProduct",upload.single("photo"),(req,res)=>{
 app.get("/deleteProduct",ensureAdmin,(req,res)=>{
   // req.body.img = req.file.filename;
    if(req.query.title){
-     db.deleteProductByTitle(req.query.title).then(()=>{
-      res.redirect("/ProductDashboard")
-
-     })     
-     .catch((err)=>{
-      console.log(err);                   //typically a faster function
-   });}
+     db.deleteProductByTitle(req.query.title);
+      res.render("ProductDash")
+                  //typically a faster function
+   }
    else{
      console.log("No Query");
      res.redirect("/ProductDashboard");

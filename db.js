@@ -3,6 +3,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
 var fs = require('fs');
+const { title } = require("process");
 
  
 
@@ -355,7 +356,8 @@ module.exports.getProductByTitle = function(inTitle){
 module.exports.deleteProductByTitle = (inTitle)=>{
     
         setTimeout(function(){
-                        
+                       console.log(inTitle);
+                        console.log(title);
             Products.deleteOne({title: inTitle})
         .exec()   //run as a promise
         .then(()=>{
