@@ -213,7 +213,7 @@ app.post("/users/add", upload.single("photo"), (req, res)=>{
 
 
 
-app.get("/edit",ensureAdmin,(req,res)=>{
+app.get("/edit",ensureLogin,(req,res)=>{
   if (req.query.email){ 
     db.getUsersByEmail(req.query.email).then((users)=>{
       res.render("EditUser", {data:users[0]}); //using [0] because user is an array
@@ -240,7 +240,7 @@ app.post("/users/edit",upload.single("photo"),(req,res)=>{
 
 
 //Delete Route
-app.get("/delete",ensureAdmin,(req,res)=>{
+app.get("/delete",ensureLogin,(req,res)=>{
  // req.body.img = req.file.filename;
   if(req.query.email){
     db.deleteUserByEmail(req.query.email);
