@@ -1,0 +1,46 @@
+
+<!--
+Vahideh Haddadi
+ID: 149955163
+-->
+
+
+<img id="main" src="/img/product.jpg" alt="products">
+
+
+
+<div class="container ">
+    {{#if users}}
+        {{#if role ='admin' }}
+            <a class="btn btn-success pull-right"
+            href="/products/edit">&nbsp;&nbsp;&nbsp;Edit product&nbsp;&nbsp;&nbsp;</a>
+            <a class="btn btn-success pull-right"
+            href="/products/delete">&nbsp;&nbsp;&nbsp;Delete product&nbsp;&nbsp;&nbsp;</a>
+        {{/if}}
+    {{/if}}
+    {{#each products}}
+
+    <div class="product">
+        <div class="col-md-2">
+                    <img class="img-fluid img-responsive img-thumbnail" src="/photos/{{img}}" alt="Image for {{title}}"> 
+        </div>
+
+       <div class="col-md-2">Title: {{title}}</div>
+            <div class="col-md-4">Ingredients: {{Ingredient}}</div>
+            <div class="col-md-2">Price: {{Price}}</div> 
+       
+        <div class="hidden">
+                {{Category}} <br>
+                {{RTEday}} <br> 
+        </div>
+        {{#if role}}
+
+        {{/if}}
+
+    </div>
+    {{else}}
+            <h4>No products were found</h4>
+    {{/each}}
+
+   
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <h3>Admin Dashboard</h3>
+    {{#if errorMessage}}
+        <div class="alert alert-danger"><strong>Error:</strong> {{errorMessage}}</div>
+    {{else if successMessage}}
+        <div class="alert alert-success"> <strong>Success:</strong> {{successMessage}}</div>
+        <a class="btn btn-success pull-left"
+    href="/users">&nbsp;&nbsp;&nbsp;users page&nbsp;&nbsp;&nbsp;</a>
+     <a class="btn btn-success "
+    href="/users/add">&nbsp;&nbsp;&nbsp;Add users&nbsp;&nbsp;&nbsp;</a>
+    <a class="btn btn-success pull-right"
+    href="/products/add">&nbsp;&nbsp;&nbsp;Add products&nbsp;&nbsp;&nbsp;</a>
+    <a class="btn btn-success pull-right"
+    href="/ProductDashboard">&nbsp;&nbsp;&nbsp;products page&nbsp;&nbsp;&nbsp;</a>
+    
+      
+    {{/if}} 
+</div>

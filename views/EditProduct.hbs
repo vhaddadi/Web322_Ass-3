@@ -1,0 +1,72 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Update Product</h2>
+            <hr />
+
+            <form method="post" action="/editProduct">
+                <fieldset>
+                    <legend>Product Information</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="title">Product Name:</label>
+                                        <input class="form-control" id="title" name="title" value="{{data.title}}" type="text" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="ingredient">Product Ingredient:</label>
+                                        <textarea class="form-control" id="Ingredient" name="Ingredient" value="{{data.Ingredient}}" type="text" rows="5"><textarea/> <br>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="price">Price:</label>
+                                        <input class="form-control" id="price" name="Price" value="{{data.Price}}" type="text" />
+                                    </div>
+                                </div>
+
+<div class="row">
+                                 <label> Category </label>
+                                <select name="Category">
+                                    <option value="Product category : {{data.Category}}"></option>
+                                    <option value="dish">Smart Food</option>
+                                    <option value="salad">Salad</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="seafood">Seafood</option>
+                                 </select>
+                                <br><br>
+                            </div>
+
+                            <label> Day Special
+                                </label>
+                                <select name="RTEday">
+                                    <option value="Special day{{data.RTEday}}"></option>
+                                    <option value="Mo">Monday</option>
+                                    <option value="Tu">Tuesday</option>
+                                    <option value="We">Wednesday</option>
+                                    <option value="Th">Thursday</option>
+                                    <option value="Fr">Friday</option>
+                                    <option value="Sa">Saturday</option>
+                                    <option value="Su">Sunday</option>
+                                </select>
+                                <br><br>
+
+
+                            </div>
+                         
+                        </fieldset>
+
+                    
+                    <hr />
+            
+                    <input type="submit" class="btn btn-primary pull-right" value="Update Product" /><br /><br /><br />
+            </form>
+        </div>
+    </div>
+</div>

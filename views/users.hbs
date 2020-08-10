@@ -1,0 +1,23 @@
+<div class="container">
+        {{#each users}}
+        <div class="row">
+            <div class="col-md-2">
+                <img class="img-fluid img-responsive img-thumbnail" src="/photos/{{img}}" alt="Image for {{fullName}}"> 
+            </div>
+            <div class="col-md-2">Name: {{fullName}}</div>
+            <div class="col-md-2">User Phone Number: {{userPhoneNumber}}</div>
+            <div class="col-md-2">Email: {{email}}</div>
+            
+            <div class=" col-md-2 ">
+                <a href="/edit?email={{email}}" class="btn btn-primary">Edit Account</a>
+            </div>
+            <div class=" col-md-1">
+                <a href="/delete?email={{email}}" class="btn btn-primary">Delete Account</a>
+            </div>
+        </div>
+        </br>
+        {{else}}
+            <h4>No users were found</h4>
+        {{/each}}
+    {{!-- {{/if}} --}}
+</div>

@@ -1,0 +1,35 @@
+
+
+<h2 class="pt-5 pl-5">Contact Us</h2>
+<section class="col-md-6">
+      
+        
+    <form method="POST" action ="/contactUs">
+
+        <label for="firstName">First Name</label>    
+        <input type="text" id="firstName" name="firstName" class="form-control" > <br>
+
+        <label for="lastName">Last Name</label>    
+        <input type="text" id="lastName" name="lastName" class="form-control"> <br>
+
+        <label for="email">Email</label>    
+        <input type="email" id="email" name="email" class="form-control"> <br> 
+
+        <label for="message">Message</label>    
+        <textarea id="message" name="message" rows="10" class="form-control"></textarea> <br>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+      
+        {{#each errorsArray}}
+
+
+        <p class="text-danger">
+  <span class="sr-only"></span>
+         {{this}}
+      </p>
+        {{/each}}
+    </form>
+      
+        
+
+</section>

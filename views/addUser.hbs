@@ -1,0 +1,70 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Add User</h2>
+            <hr />
+                {{#if errorMessage}}
+                    <div class="alert alert-danger"><strong>Error:</strong>{{errorMessage}}</div>
+                 {{/if}}
+            <form method="post" action="/users/add" enctype="multipart/form-data">
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Full Name:</label>
+                                        <input class="form-control" id="fullName" name="fullName" type="text" />
+                                    </div>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="userNumber">User Phone Number:</label>
+                                        <input class="form-control" id="userPhoneNumber" name="userPhoneNumber" type="tel" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input class="form-control" id="email" name="email" type="text"  />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input class="form-control" id="password" type="password" name="password" />
+                                </div>
+                            </div>
+                                              
+                            <div class="col-md-6">
+                                <label for="photo">Photo ID</label>
+                                <input id="photo" type="file" name="photo"/><br />
+                            </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="password2" name="password2" type="password" placeholder="Confirm Password" required />
+                                    </div>
+                                </div>
+
+
+                          </div>
+                    </fieldset>
+                    <hr />
+            
+                    <input type="submit" class="btn btn-primary pull-right" value="Add Person" /><br /><br /><br />
+            </form>
+        </div>
+    </div>
+</div>

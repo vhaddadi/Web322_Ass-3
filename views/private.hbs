@@ -1,0 +1,30 @@
+<div class="container">
+
+    <h3>Customer Account</h3>
+    {{#if errorMessage}}
+        <div class="alert alert-danger"><strong>Error:</strong> {{errorMessage}}</div>
+    {{else if successMessage}}
+        <div class="alert alert-success"> <strong>Success:</strong> {{successMessage}}</div>
+        {{#each users}}
+        <div class="row">
+            
+            <div class="col-md-2">
+                <img class="img-fluid img-responsive img-thumbnail" src="/photos/{{img}}" alt="Image for {{fullName}}"> 
+            </div>
+            <div class="col-md-2">Name: {{fullName}}</div>
+            <div class="col-md-2">User Phone Number: {{userPhoneNumber}}</div>
+            <div class="col-md-2">Email: {{email}}</div>
+            
+            <div class=" col-md-2 ">
+                <a href="/edit?email={{email}}" class="btn btn-primary">Edit Account</a>
+            </div>
+            <div class=" col-md-1">
+                <a href="/delete?email={{email}}" class="btn btn-primary">Delete Account</a>
+            </div>
+        </div>
+        </br>
+        {{else}}
+            <h4>No user were found</h4>
+        {{/each}}
+     {{/if}} 
+</div>

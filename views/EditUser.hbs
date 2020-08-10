@@ -1,0 +1,52 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Update user</h2>
+            <hr />
+
+            <form method="post" action="/users/edit">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Full Name:</label>
+                                        <input class="form-control" id="fullName" name="fullName" value="{{data.fullName}}" type="text" />
+                                    </div>
+                                </div>
+                            
+                                
+                                <input type="hidden" class="form-control" id="userPhoneNumber" name="userPhoneNumber" value="{{data.userPhoneNumber}}"  />
+                            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input class="form-control" id="email" name="email" value="{{data.email}}" type="text"  />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                   
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input class="form-control" id="password" type="password" name="password" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <hr />
+            
+                    <input type="submit" class="btn btn-primary pull-right" value="Edit Person" /><br /><br /><br />
+            </form>
+        </div>
+    </div>
+</div>
