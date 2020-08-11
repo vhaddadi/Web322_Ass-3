@@ -5,7 +5,7 @@
 const express = require("express");  //allows us to use the installed express module
 const app = express();  //takes the express module and assignes it to app
 const path = require("path");
-const ds = require("./data.js");
+//const ds = require("./data.js");
 const db = require("./db.js");
 const exphbs = require("express-handlebars");
 const bp = require("body-parser");
