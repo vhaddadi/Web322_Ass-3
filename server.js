@@ -501,16 +501,16 @@ app.get("/formPost", (req,res)=>{
 //errmessage is what is passed from reject
 //"message" gets passed into hbs
 
-app.use((err, req,res, next)=>{
-  if(err){
-    console.log(err.message);
-    res.status(500).send('Something broke!')
-  }
-  else {
-    res.status(404).send("No page found by that route");
-  }
+// app.use((err, req,res, next)=>{
+//   if(err){
+//     console.log(err.message);
+//     res.status(500).send(`Something broke!${err}`)
+//   }
+//   else {
+//     res.status(404).send("No page found by that route");
+//   }
   
-});
+// });
 
 // Countact Us
 
