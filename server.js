@@ -409,16 +409,16 @@ app.get("/deleteProduct",ensureAdmin,(req,res)=>{
 
   if (req.query.title){
     db.getProductByTitle(req.query.title).then((data)=>{
-      res.render("producDash",{products: (data.length!=0)?data:undefined});
+      res.render("ProductDash",{products: (data.length!=0)?data:undefined});
     }).catch((err)=>{
-      res.render("producDash"); //add an error message or something
+      res.render("ProductDash"); //add an error message or something
     });
   }
   else{
   db.getAllProduct().then((data)=>{
-    res.render("productDash",{products: (data.length!=0)?data:undefined});
+    res.render("ProductDash",{products: (data.length!=0)?data:undefined});
   }).catch((err)=>{
-    res.render("productDash"); //add an error message or something
+    res.render("ProductDash"); //add an error message or something
   });
   }
   
