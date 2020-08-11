@@ -2,30 +2,23 @@
          {{#each products}}
 
     <div class="row">
-        
         <div class="col-md-2">
                     <img class="img-fluid img-responsive img-thumbnail" src="/photos/{{img}}" alt="Image for {{title}}"> 
         </div>
 
        <div class="col-md-2">Title: {{title}}</div>
-            <div class="col-md-2">Description: {{Ingredient}}</div>
+            <div class="col-md-2">Ingredients: {{Ingredient}}</div>
             <div class="col-md-2">Price: {{Price}}</div> 
             <div class="col-md-2">Category: {{Category}}</div> 
             <div class="col-md-2">Day special: {{RTEday}}</div> 
-        
-        
+
             <div class=" col-md-2 ">
                 <a href="/editProduct?title={{title}}" class="btn btn-primary pull-right">Edit</a>
             </div>
             <div class=" col-md-1">
                 <a href="/deleteProduct?title={{title}}" class="btn btn-primary pull-right">Delete</a>
             </div>
-        
-        
-     
-        {{#if role}}
-
-        {{/if}}
+   
 
     </div>
     {{else}}

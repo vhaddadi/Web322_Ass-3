@@ -82,11 +82,14 @@ app.set("view engine", ".hbs"); //setup viewEngine.
 
 app.use(express.static('public'));//let us use the "public" folder in our browsers
 
-
+//let saladSum = [];
 
 app.get("/", (req, res) => {
   //console.log(process.env.MONGO_DB_CONNECTION_STRING);
-  res.render("index");
+ // let sum = db.returnSum(saladSum);
+
+    res.render("index");
+
   
 });
 
@@ -110,6 +113,7 @@ function ensureAdmin(req, res, next) {
 
 app.get("/login",(req,res)=>{
   res.render("login");
+  
 });
 
 //handles the post and calls a function to validate user and add them to a session
@@ -297,6 +301,9 @@ app.get("/smartFood",(req,res) =>{
   db.getProductByCategory('dish')
    .then((data)=>{
     res.render("productList",{products: (data.length!=0)?data:undefined});
+    
+    //  db.returnSum(data);
+    
   })
   
   .catch((err)=>{
@@ -338,14 +345,17 @@ app.get("/salad",(req,res) =>{
 });
 
 
+
 app.post("/products/add", upload.single("photo"), (req, res)=>{
 
   
   req.body.img = req.file.filename;
+  
 
   db.addProduct(req.body).then(()=>{
     res.render('addProduct', { successMessage: `${req.body.title} created` })
-   
+  
+  
   }).catch((err)=>{
     console.log("Error adding product: "+ err);
     res.render('addProduct', { errorMessage: err, title: req.body.title });
@@ -386,6 +396,7 @@ app.get("/deleteProduct",ensureAdmin,(req,res)=>{
    if(req.query.title){
      db.deleteProductByTitle(req.query.title);
       res.render("ProductDash")
+     
                   
    }
    else{

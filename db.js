@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
 var fs = require('fs');
 const { title } = require("process");
+const { stringify } = require("querystring");
 
  
 
@@ -52,6 +53,23 @@ let productSchema = new Schema({
     img: String
 
 });
+/*let packageSchema = new Schema({
+    packageName :{
+        type : String,
+        unique: true
+    },
+    item: {
+        type: [productSchema],
+        default: undefined
+    
+    },
+    packagePr:Number,
+    packageDes: String,
+    topMealPackage: Boolean
+      
+
+
+});*/
 
 //our local user/product template schemas
 let Users;
@@ -73,6 +91,7 @@ module.exports.initialize = function(){
             
             Users = db.model("user", userSchema); //if this doesn't exist, make it
             Products = db.model("product", productSchema);
+         //   Packages = db.model("package", packageSchema);
             resolve();
           });
 
@@ -398,5 +417,14 @@ module.exports.getProductByCategory = (category)=>{
    
 }
 
+// Math
 
+module.exports.returnSum =(data)=>{
 
+    sum = data.reduce(function(a, b){
+        return a + b;
+      }, 0);
+      
+      console.log(sum)
+     
+}
